@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TicketsModelStoreContainer" CdmEntityContainer="TicketsEntities">
+    <EntitySetMapping Name="Historial_Atencion">
+      <EntityTypeMapping TypeName="TicketsModel.Historial_Atencion">
+        <MappingFragment StoreEntitySet="Historial_Atencion">
+          <ScalarProperty Name="id_Historial" ColumnName="id_Historial" />
+          <ScalarProperty Name="fecha_Atencion" ColumnName="fecha_Atencion" />
+          <ScalarProperty Name="coment_realizado" ColumnName="coment_realizado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ticket">
+      <EntityTypeMapping TypeName="TicketsModel.Ticket">
+        <MappingFragment StoreEntitySet="Ticket">
+          <ScalarProperty Name="id_Ticket" ColumnName="id_Ticket" />
+          <ScalarProperty Name="persona_Sol" ColumnName="persona_Sol" />
+          <ScalarProperty Name="asunto" ColumnName="asunto" />
+          <ScalarProperty Name="descrip_incidencia" ColumnName="descrip_incidencia" />
+          <ScalarProperty Name="fecha_Ingreso" ColumnName="fecha_Ingreso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,69 @@
+﻿@model List<RegistroTickets.Ticket>
+@{
+    ViewBag.Title = "Ticket";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<h4>Registro de Ticket</h4>
+<div class=" alert alert-@ViewBag.alerta">--<b>@ViewBag.res</b></div>
+<form action="/Ticket/Index" method="post">
+    <table>
+        <tr>
+            <td style="padding:10px">Persona Solicitante</td>
+            <td style="padding: 10px"><input class="form-control" name="personaSoli" id="personaSoli" maxlength="50" /></td>
+        </tr>
+        <tr>
+            <td style="padding:10px">Asunto</td>
+            <td style="padding: 10px"><input class="form-control" type="text" name="asunto" id="asunto" maxlength="50" required /></td>
+        </tr>
+        <tr>
+            <td style="padding:10px">Descripción incidencia</td>
+            <td style="padding: 10px"><input class="form-control" type="text" name="descripInci" id="descripInci" maxlength="200" required /></td>
+        </tr>
+        <tr>
+            <td style="padding:10px">Fecha Ingreso</td>
+            <td style="padding: 10px"><input class="form-control" type="date" name="fecha" id="fecha" required /></td>
+        </tr>
+        <tr>
+            <td style="padding:10px"></td>
+            <td style="padding:10px">
+                <button class="btn btn-success" type="submit" name="btn1" id="btn1"><spam class="glyphicon glyphicon-save">Agregar</spam></button>
+                <button class="btn btn-success" type="submit" name="btn2" id="btn2"><spam class="glyphicon glyphicon-remove"></spam>Modificar</button>
+                <a classs="btn btn-danger" href="~/Seccion/Index"><span class="glyphicon glyphicon-backward">Regresar</span></a>
+
+            </td>
+        </tr>
+    </table>
+</form>
+<table id="tabla_ticket" class="table table-bordered">
+    <thead style="background-color:black;color:white">
+        <tr>
+            <th>Persona Solicitante</th>
+            <th>Asunto</th>
+            <th>Descripcion Incidencia</th>
+            <th>Fecha</th>
+            <th style="text-align:center">Mantenimiento</th>
+        </tr>
+    </thead>
+    <tbody style="background-color:white">
+        @foreach (var i in Model)
+            {
+                <tr>
+                    <td>@i.persona_Sol</td>
+                    <td>@i.asunto</td>
+                    <td>@i.descrip_incidencia</td>
+                    <td>@i.fecha_Ingreso</td>
+                    <td style="text-align:center">
+                        <button class="btn btn-warning" type="button" id="btn_act" name="btn_act" onclick="location.href='../Ticket/Actualizar?id=@i.id_Ticket'"><span class="glyphicon glyphicon-edit">Actualizar</span></button>
+                        @*<button class="btn btn-danger" type="button"></button>*@
+                    </td>
+
+                </tr>
+
+            }
+</tbody>
+    </table>
+    <br />
+    <br />
+

@@ -84,3 +84,7 @@ C:\Users\Tonny\Desktop\PruebaTicket\RegistroTickets\RegistroTickets\obj\Debug\Re
 C:\Users\Tonny\Desktop\PruebaTicket\RegistroTickets\RegistroTickets\obj\Debug\RegistroTickets.csproj.CopyComplete
 C:\Users\Tonny\Desktop\PruebaTicket\RegistroTickets\RegistroTickets\obj\Debug\RegistroTickets.dll
 C:\Users\Tonny\Desktop\PruebaTicket\RegistroTickets\RegistroTickets\obj\Debug\RegistroTickets.pdb
+C:\Users\Tonny\Desktop\PruebaTicket\RegistroTickets\RegistroTickets\bin\EntityFramework.dll
+C:\Users\Tonny\Desktop\PruebaTicket\RegistroTickets\RegistroTickets\bin\EntityFramework.SqlServer.dll
+C:\Users\Tonny\Desktop\PruebaTicket\RegistroTickets\RegistroTickets\bin\EntityFramework.xml
+C:\Users\Tonny\Desktop\PruebaTicket\RegistroTickets\RegistroTickets\bin\EntityFramework.SqlServer.xml

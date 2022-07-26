@@ -8,34 +8,25 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Menu Tickets", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                </ul>
-            </div>
+<body style="background: -webkit-linear-gradient(90deg,ligthgray 25%, ligthsteelblue 75%)">
+    <header style="background-color:black; color:white;text-align:center" >
+        <br /><h3> Registro Tickets</h3><br />
+    </header>
+    <nav class="row" style="background-color:gray;height:40px ;margin :1px 1px 1px 1px">
+        <div class="btn-group">
+            <button class="btn btn-primary" onclick="location.href='../Seccion/Index/'">Seccion</button>
+            <button class="btn btn-primary" onclick="location.href='../Ticket/Index/'">Ticket</button>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
-        </footer>
-    </div>
+    </nav>
+    <main class="row" style="margin: 2px 2px 2px 2px; background-color:beige;width:96%">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </main>
+    <footer style="background-color:black;color:white ; text-align:center">
+        <br /><small>Todos los derechos Reservados</small><br />
 
+    </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

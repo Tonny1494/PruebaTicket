@@ -1,0 +1,51 @@
+﻿@model TicketFinal.Ticket
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.persona_Sol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.persona_Sol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.asunto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.asunto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descrip_incidencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descrip_incidencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_Ingreso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_Ingreso)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_Ticket }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

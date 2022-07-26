@@ -1,0 +1,52 @@
+﻿@model IEnumerable<TicketFinal.Ticket>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.persona_Sol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.asunto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descrip_incidencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_Ingreso)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.persona_Sol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.asunto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descrip_incidencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_Ingreso)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_Ticket }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_Ticket }) 
+           @* @Html.ActionLink("Delete", "Delete", new { id=item.id_Ticket })*@
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TicketsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Historial_Atencion">
+    <Key>
+      <PropertyRef Name="id_Historial" />
+    </Key>
+    <Property Name="id_Historial" Type="Int32" Nullable="false" />
+    <Property Name="fecha_Atencion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="coment_realizado" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ticket">
+    <Key>
+      <PropertyRef Name="id_Ticket" />
+    </Key>
+    <Property Name="id_Ticket" Type="Int32" Nullable="false" />
+    <Property Name="persona_Sol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="asunto" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="descrip_incidencia" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="fecha_Ingreso" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="TicketsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Historial_Atencion" EntityType="Self.Historial_Atencion" />
+    <EntitySet Name="Ticket" EntityType="Self.Ticket" />
+  </EntityContainer>
+</Schema>

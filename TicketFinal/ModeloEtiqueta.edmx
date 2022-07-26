@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TicketsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Historial_Atencion">
+          <Key>
+            <PropertyRef Name="id_Historial" />
+          </Key>
+          <Property Name="id_Historial" Type="int" Nullable="false" />
+          <Property Name="fecha_Atencion" Type="datetime" Nullable="false" />
+          <Property Name="coment_realizado" Type="nchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="id_Ticket" />
+          </Key>
+          <Property Name="id_Ticket" Type="int" Nullable="false" />
+          <Property Name="persona_Sol" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="asunto" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="descrip_incidencia" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="fecha_Ingreso" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TicketsModelStoreContainer">
+          <EntitySet Name="Historial_Atencion" EntityType="Self.Historial_Atencion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ticket" EntityType="Self.Ticket" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TicketsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Historial_Atencion">
+          <Key>
+            <PropertyRef Name="id_Historial" />
+          </Key>
+          <Property Name="id_Historial" Type="Int32" Nullable="false" />
+          <Property Name="fecha_Atencion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="coment_realizado" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="id_Ticket" />
+          </Key>
+          <Property Name="id_Ticket" Type="Int32" Nullable="false" />
+          <Property Name="persona_Sol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="asunto" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="descrip_incidencia" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="fecha_Ingreso" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="TicketsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Historial_Atencion" EntityType="Self.Historial_Atencion" />
+          <EntitySet Name="Ticket" EntityType="Self.Ticket" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TicketsModelStoreContainer" CdmEntityContainer="TicketsEntities">
+          <EntitySetMapping Name="Historial_Atencion">
+            <EntityTypeMapping TypeName="TicketsModel.Historial_Atencion">
+              <MappingFragment StoreEntitySet="Historial_Atencion">
+                <ScalarProperty Name="id_Historial" ColumnName="id_Historial" />
+                <ScalarProperty Name="fecha_Atencion" ColumnName="fecha_Atencion" />
+                <ScalarProperty Name="coment_realizado" ColumnName="coment_realizado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ticket">
+            <EntityTypeMapping TypeName="TicketsModel.Ticket">
+              <MappingFragment StoreEntitySet="Ticket">
+                <ScalarProperty Name="id_Ticket" ColumnName="id_Ticket" />
+                <ScalarProperty Name="persona_Sol" ColumnName="persona_Sol" />
+                <ScalarProperty Name="asunto" ColumnName="asunto" />
+                <ScalarProperty Name="descrip_incidencia" ColumnName="descrip_incidencia" />
+                <ScalarProperty Name="fecha_Ingreso" ColumnName="fecha_Ingreso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
